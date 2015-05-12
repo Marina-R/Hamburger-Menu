@@ -1,6 +1,6 @@
 a {
-	display: block;
-	width: 24px;
+	display: inline-block;
+	position: relative;
 	margin: 10px 0 0 10px;
 }
 span {
@@ -17,3 +17,40 @@ a::before, a::after {
 	width: 24px;
 	height: 3px
 }
+.check {
+	position: absolute;
+  	top: 8px;
+  	left: 10px;
+  	z-index: 1;
+  	width: 24px;
+  	height: 20px;
+  	opacity: 0;
+  	cursor: pointer;
+}
+.left-side {
+	position: absolute;
+	background-color: #ccc;
+	width: 215px;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	height: auto;
+	display: none;
+}
+.text {
+	padding-left: 10px;
+}
+.check:checked ~ .text {
+	padding-left: 225px;
+}
+.check:checked ~ .left-side {
+	display: block;
+}
+.check:checked {
+	left: 225px;
+}
+.check:checked ~ a {
+	left: 215px;
+}
+
+
